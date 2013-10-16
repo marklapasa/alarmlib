@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:padding="10dp"
+    android:background="#FFFFFF">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/underline" >
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="35dp" />
+
+        <Switch
+            android:id="@+id/enableToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/details"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:visibility="gone" >
+
+
+        <CheckBox
+            android:id="@+id/repeatCheckBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+            android:text="Repeat" />
+        
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/repeatCheckBox"
+            android:textSize="20dp"/>
+        
+
+        <LinearLayout
+            android:id="@+id/daysOfWeek"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/repeatCheckBox"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" 
+            android:visibility="gone">
+
+            <ToggleButton
+                android:id="@+id/sunToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="SUN"
+                android:textOn="SUN" />
+
+            <ToggleButton
+                android:id="@+id/monToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="MON"
+                android:textOn="MON" />
+
+            <ToggleButton
+                android:id="@+id/tueToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="TUE"
+                android:textOn="TUE" />
+
+            <ToggleButton
+                android:id="@+id/wedToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="WED"
+                android:textOn="WED" />
+
+            <ToggleButton
+                android:id="@+id/thuToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="THU"
+                android:textOn="THU" />
+
+            <ToggleButton
+                android:id="@+id/friToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="FRI"
+                android:textOn="FRI" />
+
+            <ToggleButton
+                android:id="@+id/satToggle"
+                style="@style/days_of_week_toggle"
+                android:textOff="SAT"
+                android:textOn="SAT" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@id/daysOfWeek"
+            android:id="@+id/details_footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" 
+            android:visibility="gone">
+
+            <!-- Ringtone -->
+			<Button android:id="@+id/ringtoneBtn"
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:drawableLeft="@drawable/ic_action_av_play"
+			    android:text="Ringtone"
+			    android:background="@null"/>
+			
+
+            <!-- Vibrate -->
+
+            <CheckBox
+                android:id="@+id/vibrateCheckBox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Vibrate" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details"
+        android:paddingLeft="20dp" >
+
+        <TextView
+            android:id="@+id/occuranceLabel"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" />
+
+        <ImageView
+            android:id="@+id/expandIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_action_navigation_expand"
+            android:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/collapseIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_action_navigation_collapse"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+</RelativeLayout>
